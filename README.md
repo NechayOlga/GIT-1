@@ -1,2 +1,2 @@
 # GIT-1
-# Home tasks
+# This repository was created for homeworks
