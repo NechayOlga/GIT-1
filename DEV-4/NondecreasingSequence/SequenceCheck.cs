@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace NondecreasingSequence
 {
     class SequenceCheck

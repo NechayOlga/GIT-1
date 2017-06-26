@@ -6,7 +6,7 @@ namespace NondecreasingSequence
     {
         const string ENTERSEQUENCE = "Enter sequence: ";
         const string FORMATEXCEPTION = "Enter only integer numbers. Please, try again";
-        const string CONTINUEENTER = "To continue press NEXT";
+        const string CONTINUE_OR_EXIT = "Press NEXT to continue, press ENTER and another key to exit";
         static void Main(string[] args)
         {
             bool continueInput = true;
@@ -21,13 +21,17 @@ namespace NondecreasingSequence
                     bool check = sequencecheck.Check(SequenceArray);
                     ResultsOutput resultsoutput = new ResultsOutput();
                     resultsoutput.Output(check);
-                    Console.WriteLine(CONTINUEENTER);
+                    Console.WriteLine(CONTINUE_OR_EXIT);
                     if (Console.ReadLine().Equals("NEXT"))
                     {
                         continue;
                     }
-                }
-                
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.ReadKey();
+                    }
+                }                
                 catch (FormatException)
                 {
                     Console.WriteLine(FORMATEXCEPTION);
