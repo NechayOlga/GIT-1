@@ -4,17 +4,18 @@ namespace NondecreasingSequence
 {
     class ResultsOutput
     {
-        public void Output(int check)
+        const string DECREASING = "\nNO, your sequence is decreasing";
+        const string NONDECREASING = "\nYes, your sequence is nondecreasing";
+        public void Output (bool check)
         {
-            if (check == 0)
+            if (check == false)
             {
-                Console.WriteLine("\nNO, your sequence is decreasing. Enter ");
+                Console.WriteLine(DECREASING);
             }
             else
             {
-                Console.WriteLine("\nYes, your sequence is nondecreasing");
+                Console.WriteLine(NONDECREASING);
             }
-            Console.ReadKey();
         }
     }
 }

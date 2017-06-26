@@ -4,34 +4,36 @@ namespace NondecreasingSequence
 {
     class Entrypiont
     {
+        const string ENTERSEQUENCE = "Enter sequence: ";
+        const string FORMATEXCEPTION = "Enter only integer numbers. Please, try again";
+        const string CONTINUEENTER = "To continue press NEXT";
         static void Main(string[] args)
         {
-
-            while (true)
+            bool continueInput = true;
+            while (continueInput)
             {
                 try
                 {
-                    Console.WriteLine("Enter sequence: ");
+                    Console.WriteLine(ENTERSEQUENCE);
                     InputSequence inputsequence = new InputSequence();
                     int[] SequenceArray = inputsequence.Input();
                     SequenceCheck sequencecheck = new SequenceCheck();
-                    int check = sequencecheck.Check(SequenceArray);
+                    bool check = sequencecheck.Check(SequenceArray);
                     ResultsOutput resultsoutput = new ResultsOutput();
                     resultsoutput.Output(check);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Enter only integer numbers. Please, try again. To continue press next, to exit no");
-                    if (Console.ReadLine().Equals("next"))
+                    Console.WriteLine(CONTINUEENTER);
+                    if (Console.ReadLine().Equals("NEXT"))
                     {
                         continue;
                     }
-                    else
-                    {
-                        break;
-                    }
-                    
                 }
+                
+                catch (FormatException)
+                {
+                    Console.WriteLine(FORMATEXCEPTION);
+                    continue;
+                }
+                continueInput = false;
             }
         }
     }
