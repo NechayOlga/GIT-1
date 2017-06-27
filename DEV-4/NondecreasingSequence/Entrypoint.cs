@@ -4,9 +4,10 @@ namespace NondecreasingSequence
 {
     class Entrypiont
     {
-        const string ENTERSEQUENCE = "Enter sequence: ";
-        const string FORMATEXCEPTION = "Enter only integer numbers. Please, try again";
+        const string ENTER_SEQUENCE = "Enter sequence: ";
+        const string FORMAT_EXCEPTION = "Enter only integer numbers. Please, try again";
         const string CONTINUE_OR_EXIT = "Press NEXT to continue, press ENTER and another key to exit";
+        const string SHORTSEQUENCE = "One number isn't a sequense. Try again";
         static void Main(string[] args)
         {
             bool continueInput = true;
@@ -14,27 +15,35 @@ namespace NondecreasingSequence
             {
                 try
                 {
-                    Console.WriteLine(ENTERSEQUENCE);
+                    Console.WriteLine(ENTER_SEQUENCE);
                     InputSequence inputsequence = new InputSequence();
                     int[] SequenceArray = inputsequence.Input();
-                    SequenceCheck sequencecheck = new SequenceCheck();
-                    bool check = sequencecheck.Check(SequenceArray);
-                    ResultsOutput resultsoutput = new ResultsOutput();
-                    resultsoutput.Output(check);
-                    Console.WriteLine(CONTINUE_OR_EXIT);
-                    if (Console.ReadLine().Equals("NEXT"))
+                    if (SequenceArray.Length == 1)
                     {
+                        Console.WriteLine(SHORTSEQUENCE);
                         continue;
                     }
                     else
                     {
-                        Console.WriteLine();
-                        Console.ReadKey();
-                    }
-                }                
+                        SequenceCheck sequencecheck = new SequenceCheck();
+                        bool check = sequencecheck.Check(SequenceArray);
+                        ResultsOutput resultsoutput = new ResultsOutput();
+                        resultsoutput.Output(check);
+                        Console.WriteLine(CONTINUE_OR_EXIT);
+                            if (Console.ReadLine().Equals("NEXT"))
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.ReadKey();
+                            }
+                        }
+                    }                
                 catch (FormatException)
                 {
-                    Console.WriteLine(FORMATEXCEPTION);
+                    Console.WriteLine(FORMAT_EXCEPTION);
                     continue;
                 }
                 continueInput = false;
