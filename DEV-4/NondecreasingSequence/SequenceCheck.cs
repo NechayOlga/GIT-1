@@ -10,8 +10,7 @@ namespace NondecreasingSequence
                 if (SequenceArray[i] < SequenceArray[i - 1])
                 {
                     return false;
-                }
-             
+                }             
             }
             return true;
         }
