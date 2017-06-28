@@ -23,24 +23,18 @@ namespace NondecreasingSequence
                         Console.WriteLine(SHORTSEQUENCE);
                         continue;
                     }
-                    else
+                    SequenceCheck sequencecheck = new SequenceCheck();
+                    bool check = sequencecheck.Check(SequenceArray);
+                    ResultsOutput resultsoutput = new ResultsOutput();
+                    resultsoutput.Output(check);
+                    Console.WriteLine(CONTINUE_OR_EXIT);
+                    if (Console.ReadLine().Equals("NEXT"))
                     {
-                        SequenceCheck sequencecheck = new SequenceCheck();
-                        bool check = sequencecheck.Check(SequenceArray);
-                        ResultsOutput resultsoutput = new ResultsOutput();
-                        resultsoutput.Output(check);
-                        Console.WriteLine(CONTINUE_OR_EXIT);
-                            if (Console.ReadLine().Equals("NEXT"))
-                            {
-                                continue;
-                            }
-                            else
-                            {
-                                Console.WriteLine();
-                                Console.ReadKey();
-                            }
-                        }
-                    }                
+                        continue;
+                    }
+                    Console.WriteLine();
+                    Console.ReadKey();
+                }
                 catch (FormatException)
                 {
                     Console.WriteLine(FORMAT_EXCEPTION);
