@@ -1,13 +1,12 @@
-﻿
-namespace NondecreasingSequence
+﻿namespace NondecreasingSequence
 {
-    class SequenceCheck
+    class SequenceChecker
     {
-        public bool Check(int[] SequenceArray)
+        public bool Checker(int[] sequenceArray)
         {
-            for (int i = 1; i < SequenceArray.Length; i++)
+            for (int i = 1; i < sequenceArray.Length; i++)
             {
-                if (SequenceArray[i] < SequenceArray[i - 1])
+                if (sequenceArray[i] < sequenceArray[i - 1])
                 {
                     return false;
                 }             
