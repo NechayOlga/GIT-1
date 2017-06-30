@@ -17,7 +17,7 @@ namespace NondecreasingSequence
                 {
                     Console.WriteLine(ENTER_SEQUENCE);
                     InputSequence inputsequence = new InputSequence();
-                    int[] SequenceArray = inputsequence.Input();
+                    int[] SequenceArray = inputsequence.Input(args);
                     if (SequenceArray.Length == 1)
                     {
                         Console.WriteLine(SHORTSEQUENCE);
