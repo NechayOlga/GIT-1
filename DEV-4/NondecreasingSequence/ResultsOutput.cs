@@ -6,9 +6,9 @@ namespace NondecreasingSequence
     {
         const string DECREASING = "\nNO, your sequence is decreasing";
         const string NONDECREASING = "\nYes, your sequence is nondecreasing";       
-        public void Output (bool check)
+        public void Output (bool checker)
         {       
-            Console.WriteLine(check == false ? DECREASING : NONDECREASING);
+            Console.WriteLine(checker == false ? DECREASING : NONDECREASING);
         }
     }
 }

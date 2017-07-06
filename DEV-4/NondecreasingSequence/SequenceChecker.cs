@@ -2,11 +2,11 @@
 {
     class SequenceChecker
     {
-        public bool Checker(int[] sequenceArray)
+        public bool Checker(int[] SequenceArrayChecker)
         {
-            for (int i = 1; i < sequenceArray.Length; i++)
+            for (int i = 1; i < SequenceArrayChecker.Length; i++)
             {
-                if (sequenceArray[i] < sequenceArray[i - 1])
+                if (SequenceArrayChecker[i] < SequenceArrayChecker[i - 1])
                 {
                     return false;
                 }             
