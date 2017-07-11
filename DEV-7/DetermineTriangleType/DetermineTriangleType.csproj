@@ -42,9 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetermininationOfType.cs" />
+    <Compile Include="Checker.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="Sides.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="Equilateral.cs" />
+    <Compile Include="Versalite.cs" />
+    <Compile Include="Isosceles.cs" />
     <Compile Include="InputSides.cs" />
-    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Entrypoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
