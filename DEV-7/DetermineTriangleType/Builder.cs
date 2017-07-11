@@ -14,10 +14,8 @@ namespace DetermineTriangleType
         const string ISOSCELES = "Triangle is isosceles";
         const string VERSALITE = "Triangle is versalite";
         double EPS = Double.Epsilon;
-        //Sides sides;
         public Builder(Sides sides)
         {
-            //this.sides = sides;
             double sideA = sides.sideA;
             double sideB = sides.sideB;
             double sideC = sides.sideC;
