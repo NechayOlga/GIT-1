@@ -9,12 +9,15 @@ namespace DetermineTriangleType
     }
     class Builder
     {
+        
         const string EQUILATERAL = "Triangle is equilateral";
         const string ISOSCELES = "Triangle is isosceles";
         const string VERSALITE = "Triangle is versalite";
         double EPS = Double.Epsilon;
+        //Sides sides;
         public Builder(Sides sides)
         {
+            //this.sides = sides;
             double sideA = sides.sideA;
             double sideB = sides.sideB;
             double sideC = sides.sideC;
@@ -37,18 +40,18 @@ namespace DetermineTriangleType
 
         TriangleType DetermineType(Sides sides)
         {
-            TriangleType triangletype = TriangleType.VERSALITE;
+            TriangleType triangleType = TriangleType.VERSALITE;
             if ((Math.Abs(sides.sideA - sides.sideB) < EPS) && (Math.Abs(sides.sideA - sides.sideC) < EPS) &&
                                                         (Math.Abs(sides.sideB - sides.sideC) < EPS))
             {
-                triangletype = TriangleType.EQUILATERAL;
+                triangleType = TriangleType.EQUILATERAL;
             }
             else if ((Math.Abs(sides.sideA - sides.sideB) < EPS) || (Math.Abs(sides.sideA - sides.sideC) < EPS) ||
                                                          (Math.Abs(sides.sideB - sides.sideC) < EPS))
             {
-                triangletype = TriangleType.ISOSCELES;
+                triangleType = TriangleType.ISOSCELES;
             }
-            return triangletype;
+            return triangleType;
         }
     }
 }
