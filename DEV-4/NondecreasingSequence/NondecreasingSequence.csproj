@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ResultsOutput.cs" />
-    <Compile Include="SequenceCheck.cs" />
+    <Compile Include="SequenceChecker.cs" />
     <Compile Include="InputSequence.cs" />
     <Compile Include="Entrypoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

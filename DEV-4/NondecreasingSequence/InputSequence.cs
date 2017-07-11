@@ -4,15 +4,30 @@ namespace NondecreasingSequence
 {
     class InputSequence
     {
-        string[] Sequence = Console.ReadLine().Split();
-        public int[] Input ()
+        const string ENTER_SEQUENCE = "Enter sequence: ";
+        public int[] Input(string[] commandPromptInput)
         {
-            int[] SequenceArray = new int[Sequence.Length];   
-            for (int i = 0; i < Sequence.Length; i++)
+            int[] InputSequenceArray = null;
+            if (commandPromptInput.Length == 0)
             {
-                SequenceArray[i] = int.Parse(Sequence[i]);
-            }          
-            return SequenceArray;
+                Console.WriteLine(ENTER_SEQUENCE);
+                string[] Sequence = Console.ReadLine().Split();
+                InputSequenceArray = new int[Sequence.Length];
+                for (int i = 0; i < Sequence.Length; i++)
+                {
+                    InputSequenceArray[i] = int.Parse(Sequence[i]);
+                }
+            }
+            else
+            {
+                InputSequenceArray = new int[commandPromptInput.Length];
+                for (int i = 0; i < commandPromptInput.Length; i++)
+                {
+                    InputSequenceArray[i] = int.Parse(commandPromptInput[i]);
+                }
+
+            }
+            return InputSequenceArray;
         }
     }
 }

@@ -15,16 +15,15 @@ namespace NondecreasingSequence
             {
                 try
                 {
-                    Console.WriteLine(ENTER_SEQUENCE);
                     InputSequence inputsequence = new InputSequence();
-                    int[] SequenceArray = inputsequence.Input();
+                    int[] SequenceArray = inputsequence.Input(args);
                     if (SequenceArray.Length == 1)
                     {
                         Console.WriteLine(SHORTSEQUENCE);
                         continue;
                     }
-                    SequenceCheck sequencecheck = new SequenceCheck();
-                    bool check = sequencecheck.Check(SequenceArray);
+                    SequenceChecker sequencecheck = new SequenceChecker();
+                    bool check = sequencecheck.Checker(SequenceArray);
                     ResultsOutput resultsoutput = new ResultsOutput();
                     resultsoutput.Output(check);
                     Console.WriteLine(CONTINUE_OR_EXIT);
