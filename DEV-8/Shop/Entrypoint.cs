@@ -10,7 +10,7 @@ namespace Shop
     {
         static void Main(string[] args)
         {
-            const string CONTINUE_INPUT = "\nEnter STOP to exit";
+            //const string CONTINUE_INPUT = "\nEnter STOP to exit";
             const string CONTINUE_OR_EXIT = "To stop the program enter 'exit' and ENTER,  to input other products" +
                                             "\nenter another bottom";
             const string CONTINUE_COMMANDS = "To enter new commands press 'new command', to input new product another key";

@@ -9,9 +9,9 @@ namespace Shop
     public class Commands
     {
         const string NOT_EXISTENT_TYPE = "Such type doesn't exist in your product list, try again";
-        public int CountTypes(PurchaseBuilder purchaseBuilder)
+        public int CountTypes(PurchaseBuilder purchaseBuilder, List<Purchase> typesArray)
         {
-            List<Purchase> typesArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
+            //typesArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             for(int i = 0; i < typesArray.Count; i++)
             {
                 for(int j = ( i + 1 ); j < typesArray.Count; j++)
@@ -26,9 +26,8 @@ namespace Shop
             int countTypes = typesArray.Count;
             return countTypes;
         }
-        public int CountQuantity(PurchaseBuilder purchaseBuilder)
+        public int CountQuantity(PurchaseBuilder purchaseBuilder, List<Purchase> quantityArray)
         {
-            List<Purchase> quantityArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             int quantity = 0;
             for(int i = 0; i < quantityArray.Count; i++)
             {
@@ -36,9 +35,8 @@ namespace Shop
             }
             return quantity;
         }
-        public decimal CountPrice(PurchaseBuilder purchaseBuilder)
+        public decimal CountPrice(PurchaseBuilder purchaseBuilder, List<Purchase> priceArray)
         {
-            List<Purchase> priceArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             decimal allPrice = 0;
             for(int i = 0; i < priceArray.Count; i++)
             {
@@ -47,9 +45,8 @@ namespace Shop
             decimal averagePrice = allPrice / priceArray.Count;
             return averagePrice;
         }
-        public decimal AverageCountPrice(PurchaseBuilder purchaseBuilder, string typeAveragePrice)
+        public decimal AverageCountPrice(PurchaseBuilder purchaseBuilder, string typeAveragePrice, List<Purchase> averagePriceArray)
         {
-            List<Purchase> averagePriceArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             decimal averagePriceType = 0;
             int count = 0;
             for (int i = 0 ; i < averagePriceArray.Count; i++)

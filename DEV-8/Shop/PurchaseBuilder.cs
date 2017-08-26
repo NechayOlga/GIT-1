@@ -16,16 +16,18 @@ namespace Shop
             bool check = true;
             while (check)
             {
-            CreatePurchase createPurchase = new CreatePurchase();
-            Purchase purchase = createPurchase.InputPurchase();
-            arrayPurchaseBuild.Add(purchase);
-            Console.WriteLine(CONTINUE_INPUT);
-            if (Console.ReadLine().Equals("STOP"))
-            {
-                break;
-            }
-            continue;
-        } 
+                CreatePurchase createPurchase = new CreatePurchase();
+                Purchase purchase = createPurchase.InputPurchase();
+                AddPurchase addPurchase = new AddPurchase();
+                addPurchase.PurchaseAdder(purchase, arrayPurchaseBuild);
+                //arrayPurchaseBuild.Add(purchase);
+                Console.WriteLine(CONTINUE_INPUT);
+                if (Console.ReadLine().Equals("STOP"))
+                {
+                    break;
+                }
+                continue;
+            } 
         }
         public List<Purchase> ArrayPurchaseBuild()
         {

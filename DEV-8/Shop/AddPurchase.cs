@@ -8,10 +8,8 @@ namespace Shop
 {
     public class AddPurchase
     {
-        public void PurchaseAdder(Purchase purchase)
-        {
-            PurchaseBuilder purchaseBuilder = new PurchaseBuilder();
-            List<Purchase> arrayPurchase = purchaseBuilder.ArrayPurchaseBuild();    
+        public void PurchaseAdder(Purchase purchase, List<Purchase> arrayPurchase)
+        { 
             arrayPurchase.Add(purchase);
         }
     }

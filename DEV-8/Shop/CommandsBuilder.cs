@@ -17,17 +17,18 @@ namespace Shop
         public void BuildCommands(string inputedCommand, PurchaseBuilder purchaseBuilder)
         {
             Commands commands = new Commands();
+            List<Purchase> purchaseArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             if (inputedCommand.Equals(COUNT_TYPES))
             {
-                Console.WriteLine(commands.CountTypes(purchaseBuilder));
+                Console.WriteLine(commands.CountTypes(purchaseBuilder, purchaseArray));
             }
             else if (inputedCommand.Equals(COUNT_ALL))
             {
-                Console.WriteLine(commands.CountQuantity(purchaseBuilder));
+                Console.WriteLine(commands.CountQuantity(purchaseBuilder, purchaseArray));
             }
             else if (inputedCommand.Equals(AVERAGE_PRICE))
             {
-                Console.WriteLine(commands.CountPrice(purchaseBuilder));
+                Console.WriteLine(commands.CountPrice(purchaseBuilder, purchaseArray));
             }          
             else if(inputedCommand.Contains(AVERAGE_PRICE_SPACE))
             {
@@ -35,7 +36,7 @@ namespace Shop
                 string averagePrice = string.Concat("average price ", averagePriceType);
                 if (inputedCommand.Equals(averagePrice))
                 {
-                    Console.WriteLine(commands.AverageCountPrice(purchaseBuilder, averagePriceType));
+                    Console.WriteLine(commands.AverageCountPrice(purchaseBuilder, averagePriceType, purchaseArray));
                 }
             }
             else 
