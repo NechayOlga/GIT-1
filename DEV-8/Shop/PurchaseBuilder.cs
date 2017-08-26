@@ -28,7 +28,6 @@ namespace Shop
             CreatePurchase createPurchase = new CreatePurchase();
             Purchase purchase = createPurchase.InputPurchase();
             arrayPurchaseBuild.Add(purchase);
-
             //arrayPurchase.Add(purchase);
             Console.WriteLine(CONTINUE_INPUT);
             if (Console.ReadLine().Equals("STOP"))

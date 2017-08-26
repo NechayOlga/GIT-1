@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +8,15 @@ namespace Shop
 {
     public class AddPurchase
     {
-        List<Purchase> arrayPurchase = new List<Purchase>();
         public void PurchaseAdder(Purchase purchase)
-        {         
+        {
+            PurchaseBuilder purchaseBuilder = new PurchaseBuilder();
+            List<Purchase> arrayPurchase = purchaseBuilder.ArrayPurchaseBuild();    
             arrayPurchase.Add(purchase);
         }
-        public List<Purchase> ArrayPurchase()
+       /* public List<Purchase> ArrayPurchase()
         {
             return arrayPurchase;
-        }
+        }*/
     }
 }
-*/
