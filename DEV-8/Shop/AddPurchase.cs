@@ -14,9 +14,5 @@ namespace Shop
             List<Purchase> arrayPurchase = purchaseBuilder.ArrayPurchaseBuild();    
             arrayPurchase.Add(purchase);
         }
-       /* public List<Purchase> ArrayPurchase()
-        {
-            return arrayPurchase;
-        }*/
     }
 }
