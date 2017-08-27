@@ -12,12 +12,13 @@ namespace Shop
         {
             //const string CONTINUE_INPUT = "\nEnter STOP to exit";
             const string CONTINUE_OR_EXIT = "\n1)To stop the program enter 'exit' and ENTER." +
-                                            "\nTo input other products enter another bottom";
+                                            "\nTo create new product list enter 'new product list'";
             const string CONTINUE_COMMANDS ="\n2)To enter new commands press 'new command' " +
-                                            "\nto input new product another key";
+                                            "\nTo create new product list enter 'new product list'";
             const string FORMAT_EXCEPTION = "Invalid format of data, try again";
-            bool check = true;
-            while (check == true)
+            string nextActivity = String.Empty;
+            bool checkStop = true;
+            while (checkStop == true)
             {
                 try
                 {
@@ -34,16 +35,18 @@ namespace Shop
                             outputer.OutputCommands();
                             string inputedCommand = inputer.InputStrings();
                             CommandsBuilder commandsBuilder = new CommandsBuilder();
-                            commandsBuilder.BuildCommands(inputedCommand, purchaseBuilder);
+                            string commandResult = commandsBuilder.BuildCommands(inputedCommand, purchaseBuilder.ArrayPurchaseBuild());
+                            Console.Write(commandResult);
                             Console.WriteLine(CONTINUE_COMMANDS);
                             Console.WriteLine(CONTINUE_OR_EXIT);
-                            if (Console.ReadLine().Equals("new command"))
+                            nextActivity = Console.ReadLine();
+                            if (nextActivity.Equals("new command"))
                             {
                                 continue;
                             }
                             else
                             {
-                                mark = false;
+                                break;
                             }
                         }
                         catch (NotExistentTypeAverageTypeCommandException typeMessage)
@@ -73,7 +76,15 @@ namespace Shop
                     Console.WriteLine(FORMAT_EXCEPTION);
                     continue;
                 }
-                check = false;
+                if (nextActivity.Equals("exit"))
+                {
+                    break;
+                }
+                if(nextActivity.Equals("new product list"))
+                {
+                    continue;
+                }
+                checkStop = false;
                 Console.ReadKey();      
             }
         }
