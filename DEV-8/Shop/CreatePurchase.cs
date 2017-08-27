@@ -25,12 +25,20 @@ namespace Shop
                 string name = inputer.InputStrings();
                 Console.WriteLine(INPUT_QUANTITY);
                 int quantity = inputer.InputQuantity();
+                if (quantity.GetType() != typeof(Int32))
+                {
+                    throw new FormatException();
+                }
                 if (quantity < 0)
                 {
                     throw new NegativeQuantityException(NEGATIVE_QUANTITY_EXCEPTION);
-                }
+                }            
                 Console.WriteLine(INPUT_PRICE);
                 decimal price = inputer.InputPrice();
+                if (price.GetType() != typeof(Decimal))
+                {
+                    throw new FormatException();
+                }
                 if (price < 0)
                 {
                     throw new NegativePriceException(NEGATIVE_PRICE_EXCEPTION);

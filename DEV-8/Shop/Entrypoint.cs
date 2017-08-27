@@ -12,10 +12,9 @@ namespace Shop
         {
             //const string CONTINUE_INPUT = "\nEnter STOP to exit";
             const string CONTINUE_OR_EXIT = "\n1)To stop the program enter 'exit' and ENTER." +
-                                            "\nTo create new product list enter 'new product list'";
-            const string CONTINUE_COMMANDS ="\n2)To enter new commands press 'new command' " +
-                                            "\nTo create new product list enter 'new product list'";
-            const string FORMAT_EXCEPTION = "Invalid format of data, try again";
+                                            "\nTo create new product list enter 'new product list'.";
+            const string CONTINUE_COMMANDS ="\n2)To enter new commands press 'new command'." +
+                                            "\nTo create new product list enter 'new product list'.";
             string nextActivity = String.Empty;
             bool checkStop = true;
             while (checkStop == true)
@@ -71,11 +70,7 @@ namespace Shop
                     Console.WriteLine(priceMessage.Message);
                     continue;
                 }
-                catch (FormatException)
-                {
-                    Console.WriteLine(FORMAT_EXCEPTION);
-                    continue;
-                }
+               
                 if (nextActivity.Equals("exit"))
                 {
                     break;
