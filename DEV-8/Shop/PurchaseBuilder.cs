@@ -9,7 +9,7 @@ namespace Shop
 {
     public class PurchaseBuilder
     {
-        const string CONTINUE_INPUT = "\nEnter STOP to exit";
+        const string CONTINUE_INPUT = "\nEnter STOP to finish product list";
         List<Purchase> arrayPurchaseBuild = new List<Purchase>();
         public void BuildPurchase()
         {        

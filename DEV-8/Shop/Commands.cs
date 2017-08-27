@@ -8,7 +8,7 @@ namespace Shop
 {
     public class Commands
     {
-        const string NOT_EXISTENT_TYPE = "Such type doesn't exist in your product list, try again";
+        const string NOT_EXISTENT_TYPE = "\nSuch type doesn't exist in your product list, try again";
         public int CountTypes(List<Purchase> typesArray)
         {
             //typesArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
