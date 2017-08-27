@@ -9,7 +9,7 @@ namespace Shop
     public class Commands
     {
         const string NOT_EXISTENT_TYPE = "Such type doesn't exist in your product list, try again";
-        public int CountTypes(PurchaseBuilder purchaseBuilder, List<Purchase> typesArray)
+        public int CountTypes(List<Purchase> typesArray)
         {
             //typesArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             for(int i = 0; i < typesArray.Count; i++)
@@ -26,7 +26,7 @@ namespace Shop
             int countTypes = typesArray.Count;
             return countTypes;
         }
-        public int CountQuantity(PurchaseBuilder purchaseBuilder, List<Purchase> quantityArray)
+        public int CountQuantity(List<Purchase> quantityArray)
         {
             int quantity = 0;
             for(int i = 0; i < quantityArray.Count; i++)
@@ -35,7 +35,7 @@ namespace Shop
             }
             return quantity;
         }
-        public decimal CountPrice(PurchaseBuilder purchaseBuilder, List<Purchase> priceArray)
+        public decimal CountPrice(List<Purchase> priceArray)
         {
             decimal allPrice = 0;
             for(int i = 0; i < priceArray.Count; i++)
@@ -45,7 +45,7 @@ namespace Shop
             decimal averagePrice = allPrice / priceArray.Count;
             return averagePrice;
         }
-        public decimal AverageCountPrice(PurchaseBuilder purchaseBuilder, string typeAveragePrice, List<Purchase> averagePriceArray)
+        public decimal AverageCountPrice(string typeAveragePrice, List<Purchase> averagePriceArray)
         {
             decimal averagePriceType = 0;
             int count = 0;
