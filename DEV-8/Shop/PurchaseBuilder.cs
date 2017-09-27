@@ -23,7 +23,6 @@ namespace Shop
                     Purchase purchase = createPurchase.InputPurchase();
                     AddPurchase addPurchase = new AddPurchase();
                     addPurchase.PurchaseAdder(purchase, arrayPurchaseBuild);
-                    //arrayPurchaseBuild.Add(purchase);
                     Console.WriteLine(CONTINUE_INPUT);
                     if (Console.ReadLine().Equals("STOP"))
                     {

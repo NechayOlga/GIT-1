@@ -10,7 +10,7 @@ namespace Shop
     {
         const string EXISTENR_COMMANDS = "NEXT COMMANDS ARE AVAILABLE FOR THIS PRODUCT LIST: ";
         const string COUNT_TYPES = "\nCOMMAND1. To count all types of products enter 'count types'";
-        const string COUNT_QUANTITY = "\nCOMMAND2.To count quantity of all products enter 'count all'";
+        const string COUNT_QUANTITY = "\nCOMMAND2. To count quantity of all products enter 'count all'";
         const string AVERAGE_PRICE = "\nCOMMANDS3. To count the average price of all products enter 'average price'";
         const string AVERAGE_PRICE_TYPE = "\nCOMMAND4. To count the average price of the product of the specific TYPE " +
                                           "\nenter 'average price TYPE'";

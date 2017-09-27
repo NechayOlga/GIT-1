@@ -11,7 +11,6 @@ namespace Shop
         const string NOT_EXISTENT_TYPE = "\nSuch type doesn't exist in your product list, try again";
         public int CountTypes(List<Purchase> typesArray)
         {
-            //typesArray = new List<Purchase>(purchaseBuilder.ArrayPurchaseBuild());
             for(int i = 0; i < typesArray.Count; i++)
             {
                 for(int j = ( i + 1 ); j < typesArray.Count; j++)
