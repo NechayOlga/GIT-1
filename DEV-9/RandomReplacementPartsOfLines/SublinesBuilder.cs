@@ -2,6 +2,10 @@
 {
     class SublinesBuilder
     {
+        /// <summary>
+        /// Class was created for
+        /// building sublines
+        /// </summary>
         public string InitialLine
         { get; private set; }
         public string ReplacingLine
@@ -13,6 +17,8 @@
         }
 
         RandomNumbersBuilder randomNumberBuilder = new RandomNumbersBuilder();
+
+        //Method builds the replaced subline - subline, which will be replaced
         public string BuildReplacedSubline()
         {
             int beginningOfReplacedSubline = randomNumberBuilder.BuildBeginningOfReplacedSubline(InitialLine);
@@ -20,6 +26,8 @@
             string replacedSubline = InitialLine.Substring(beginningOfReplacedSubline, lengthOfReplacedSubline);
             return replacedSubline;
         }
+
+        //Method builds the replacing subline - subline, on which will be changed replaced subline
         public string BuildReplacingSubline()
         {
             int beginningOfReplacingSubline = randomNumberBuilder.BuildBeginningOfReplacingSubline(ReplacingLine);
