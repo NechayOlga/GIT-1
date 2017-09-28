@@ -5,7 +5,7 @@ namespace RandomReplacementPartsOfLines
 {
     class LinesReader
     {
-        public void ReaderInitialLine(string line, out string initialLine, out string replacingLine)
+        public void ReaderOfLines(string line, out string initialLine, out string replacingLine)
         {
             using (StreamReader streamReader = new StreamReader(line))
             {

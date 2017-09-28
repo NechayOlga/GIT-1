@@ -12,7 +12,7 @@ namespace RandomReplacementPartsOfLines
             LinesReader linesReader = new LinesReader();
             string initialLine = string.Empty;
             string replacingLine = string.Empty;
-            linesReader.ReaderInitialLine(line, out initialLine,out replacingLine);
+            linesReader.ReaderOfLines(line, out initialLine,out replacingLine);
 
             //Creating of replaced and replacing sublines
             LinesBuilder sublinesBuilder = new LinesBuilder(initialLine, replacingLine);
