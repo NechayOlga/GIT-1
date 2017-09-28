@@ -1,6 +1,8 @@
-﻿namespace RandomReplacementPartsOfLines
+﻿using System.Text.RegularExpressions;
+
+namespace RandomReplacementPartsOfLines
 {
-    class SublinesBuilder
+    class LinesBuilder
     {
         /// <summary>
         /// Class was created for
@@ -10,7 +12,7 @@
         { get; private set; }
         public string ReplacingLine
         { get; private set; }
-        public SublinesBuilder(string initialLine, string replacingLine)
+        public LinesBuilder(string initialLine, string replacingLine)
         {
             InitialLine = initialLine;
             ReplacingLine = replacingLine;
@@ -34,6 +36,13 @@
             int lengthOfReplacingSubline = randomNumberBuilder.BuildLengthOfReplacingSubline(ReplacingLine, beginningOfReplacingSubline);
             string replacingSubline = ReplacingLine.Substring(beginningOfReplacingSubline, lengthOfReplacingSubline);
             return replacingSubline;
-        }     
+        }
+
+        //Method replaces sublines
+        public string SublinesReplacing(string initialLine, string replacedSubline, string replacingSubline)
+        {
+            string resultLine = Regex.Replace(initialLine, replacedSubline, replacingSubline);
+            return resultLine;
+        }
     }
 }

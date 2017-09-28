@@ -44,8 +44,7 @@
   <ItemGroup>
     <Compile Include="Entrypoint.cs" />
     <Compile Include="RandomNumbersBuilder.cs" />
-    <Compile Include="SublinesBuilder.cs" />
-    <Compile Include="SublinesReplacer.cs" />
+    <Compile Include="LinesBuilder.cs" />
     <Compile Include="Outputer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

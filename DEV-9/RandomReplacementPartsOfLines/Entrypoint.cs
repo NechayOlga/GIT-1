@@ -12,12 +12,11 @@ namespace RandomReplacementPartsOfLines
             string initialLine = INITIAL_LINE;
             string replacingLine = REPLACING_LINE;
 
-            SublinesBuilder sublinesBuilder = new SublinesBuilder(initialLine, replacingLine);
+            LinesBuilder sublinesBuilder = new LinesBuilder(initialLine, replacingLine);
             string replacedSubline = sublinesBuilder.BuildReplacedSubline();
             string replacingSubline = sublinesBuilder.BuildReplacingSubline();
 
-            SublinesReplacer sublinesReplacer = new SublinesReplacer();
-            string resultLine = sublinesReplacer.SublinesReplacing(initialLine, replacedSubline, replacingSubline);
+            string resultLine = sublinesBuilder.SublinesReplacing(initialLine, replacedSubline, replacingSubline);
 
             Outputer outputer = new Outputer();
             outputer.OutputOfLines(initialLine);
