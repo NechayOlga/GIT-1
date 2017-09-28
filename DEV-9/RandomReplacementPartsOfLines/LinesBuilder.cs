@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
+
 namespace RandomReplacementPartsOfLines
 {
     class LinesBuilder
@@ -17,7 +18,7 @@ namespace RandomReplacementPartsOfLines
             InitialLine = initialLine;
             ReplacingLine = replacingLine;
         }
-
+      
         RandomNumbersBuilder randomNumberBuilder = new RandomNumbersBuilder();
 
         //Method builds the replaced subline - subline, which will be replaced

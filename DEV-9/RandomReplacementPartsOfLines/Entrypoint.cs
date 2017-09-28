@@ -1,16 +1,18 @@
 ﻿using System;
 
+
 namespace RandomReplacementPartsOfLines
 {
     class Entrypoint
     {
         static void Main(string[] args)
         {
-            const string INITIAL_LINE = "abcdef";
-            const string REPLACING_LINE = "efghij";
-            
-            string initialLine = INITIAL_LINE;
-            string replacingLine = REPLACING_LINE;
+            //Creating initial and replacing lines
+            string line = @"e:\TAT\GIT-1\DEV-9\RandomReplacementPartsOfLines\Lines.txt";
+            LinesReader linesReader = new LinesReader();
+            string initialLine = string.Empty;
+            string replacingLine = string.Empty;
+            linesReader.ReaderInitialLine(line, out initialLine,out replacingLine);
 
             //Creating of replaced and replacing sublines
             LinesBuilder sublinesBuilder = new LinesBuilder(initialLine, replacingLine);
