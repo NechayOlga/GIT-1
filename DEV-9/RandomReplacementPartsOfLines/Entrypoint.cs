@@ -18,10 +18,9 @@ namespace RandomReplacementPartsOfLines
 
             string resultLine = sublinesBuilder.SublinesReplacing(initialLine, replacedSubline, replacingSubline);
 
-            Outputer outputer = new Outputer();
-            outputer.OutputOfLines(initialLine);
-            outputer.OutputOfLines(replacingLine);
-            outputer.OutputOfLines(resultLine);
+            Console.WriteLine(initialLine);
+            Console.WriteLine(replacingLine);
+            Console.WriteLine(resultLine);
             Console.ReadKey();                        
         }
     }
