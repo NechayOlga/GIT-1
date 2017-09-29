@@ -20,8 +20,10 @@ namespace RandomReplacementPartsOfLines
         }
       
         RandomNumbersBuilder randomNumberBuilder = new RandomNumbersBuilder();
-
-        //Method builds the replaced subline - subline, which will be replaced
+        /// <summary>
+        /// Method builds the replaced subline - subline, which will be replaced
+        /// </summary>
+        /// <returns>string replacedSubline</returns>
         public string BuildReplacedSubline()
         {
             int beginningOfReplacedSubline = randomNumberBuilder.BuildBeginningOfSubline(InitialLine);
@@ -29,8 +31,10 @@ namespace RandomReplacementPartsOfLines
             string replacedSubline = InitialLine.Substring(beginningOfReplacedSubline, lengthOfReplacedSubline);
             return replacedSubline;
         }
-
-        //Method builds the replacing subline - subline, on which will be changed replaced subline
+        /// <summary>
+        /// Method builds the replacing subline - subline, on which will be changed replaced subline
+        /// </summary>
+        /// <returns>string replacingSubline</returns>
         public string BuildReplacingSubline()
         {
             int beginningOfReplacingSubline = randomNumberBuilder.BuildBeginningOfSubline(ReplacingLine);
@@ -38,8 +42,13 @@ namespace RandomReplacementPartsOfLines
             string replacingSubline = ReplacingLine.Substring(beginningOfReplacingSubline, lengthOfReplacingSubline);
             return replacingSubline;
         }
-
-        //Method replaces sublines
+        /// <summary>
+        /// Method replaces sublines
+        /// </summary>
+        /// <param name="initialLine">the line, which contains the subline, which will be replaced</param>
+        /// <param name="replacedSubline">the subline, that will be replaced</param>
+        /// <param name="replacingSubline">the subline, on which will be replaced replacedSubline</param>
+        /// <returns>string resultLine</returns>
         public string SublinesReplacing(string initialLine, string replacedSubline, string replacingSubline)
         {
             string resultLine = Regex.Replace(initialLine, replacedSubline, replacingSubline);
