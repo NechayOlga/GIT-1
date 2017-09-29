@@ -24,7 +24,7 @@ namespace RandomReplacementPartsOfLines
                 //Creating initial and replacing lines
                 string line = @"e:\TAT\GIT-1\DEV-9\RandomReplacementPartsOfLines\Lines.txt";
                 LinesReader linesReader = new LinesReader();
-                linesReader.ReaderOfLines(line, out string initialLine, out string replacingLine);
+                linesReader.ReadOfLines(line, out string initialLine, out string replacingLine);
 
                 //Creating of replaced and replacing sublines
                 LinesBuilder sublinesBuilder = new LinesBuilder(initialLine, replacingLine);
@@ -32,7 +32,7 @@ namespace RandomReplacementPartsOfLines
                 string replacingSubline = sublinesBuilder.BuildReplacingSubline();
 
                 //Creating of result line with replacing parts
-                string resultLine = sublinesBuilder.SublinesReplacing(initialLine, replacedSubline, replacingSubline);
+                string resultLine = sublinesBuilder.ReplaceSublines(initialLine, replacedSubline, replacingSubline);
 
                 //Outputing of initial, replacing and result lines
                 Console.WriteLine(initialLine);

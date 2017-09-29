@@ -48,7 +48,7 @@ namespace RandomReplacementPartsOfLines
         /// <param name="replacedSubline">the subline, that will be replaced</param>
         /// <param name="replacingSubline">the subline, on which will be replaced replacedSubline</param>
         /// <returns>string resultLine</returns>
-        public string SublinesReplacing(string initialLine, string replacedSubline, string replacingSubline)
+        public string ReplaceSublines(string initialLine, string replacedSubline, string replacingSubline)
         {
             string resultLine = Regex.Replace(initialLine, replacedSubline, replacingSubline);
             return resultLine;
