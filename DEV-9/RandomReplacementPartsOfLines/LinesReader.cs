@@ -10,7 +10,7 @@ namespace RandomReplacementPartsOfLines
     class LinesReader
     {
         /// <summary>
-        /// Method ReaderOfLines reads 
+        /// Method ReadOfLines reads 
         /// initial and replaving lines
         /// from text file
         /// </summary>
