@@ -24,8 +24,8 @@ namespace RandomReplacementPartsOfLines
         //Method builds the replaced subline - subline, which will be replaced
         public string BuildReplacedSubline()
         {
-            int beginningOfReplacedSubline = randomNumberBuilder.BuildBeginningOfReplacedSubline(InitialLine);
-            int lengthOfReplacedSubline = randomNumberBuilder.BuildLengthOfReplacedSubline(InitialLine, beginningOfReplacedSubline);
+            int beginningOfReplacedSubline = randomNumberBuilder.BuildBeginningOfSubline(InitialLine);
+            int lengthOfReplacedSubline = randomNumberBuilder.BuildLengthOfSubline(InitialLine, beginningOfReplacedSubline);
             string replacedSubline = InitialLine.Substring(beginningOfReplacedSubline, lengthOfReplacedSubline);
             return replacedSubline;
         }
@@ -33,8 +33,8 @@ namespace RandomReplacementPartsOfLines
         //Method builds the replacing subline - subline, on which will be changed replaced subline
         public string BuildReplacingSubline()
         {
-            int beginningOfReplacingSubline = randomNumberBuilder.BuildBeginningOfReplacingSubline(ReplacingLine);
-            int lengthOfReplacingSubline = randomNumberBuilder.BuildLengthOfReplacingSubline(ReplacingLine, beginningOfReplacingSubline);
+            int beginningOfReplacingSubline = randomNumberBuilder.BuildBeginningOfSubline(ReplacingLine);
+            int lengthOfReplacingSubline = randomNumberBuilder.BuildLengthOfSubline(ReplacingLine, beginningOfReplacingSubline);
             string replacingSubline = ReplacingLine.Substring(beginningOfReplacingSubline, lengthOfReplacingSubline);
             return replacingSubline;
         }
