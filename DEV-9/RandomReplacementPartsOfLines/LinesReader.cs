@@ -9,20 +9,17 @@ namespace RandomReplacementPartsOfLines
         {
             using (StreamReader streamReader = new StreamReader(line))
             {
+                if(line == null)
+                {
+                    throw new FileNotFoundException();
+                }
                 initialLine = streamReader.ReadLine();
                 replacingLine = streamReader.ReadLine();
+                if ((initialLine == null)||(replacingLine == null))
+                {
+                    throw new ArgumentNullException();
+                }                
             }
         }
-
-        /*public string ReaderReplacingLine(string line)
-        {
-            string replacingLine = String.Empty;
-            using (StreamReader streamReader = new StreamReader(line))
-            {
-                
-            }
-            return replacingLine;
-        }*/
-
     }
 }
