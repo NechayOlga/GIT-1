@@ -10,14 +10,14 @@ namespace RandomReplacementPartsOfLines
     class LinesReader
     {
         /// <summary>
-        /// Method ReadOfLines reads 
+        /// Method ReadLines reads 
         /// initial and replaving lines
         /// from text file
         /// </summary>
         /// <param ="line"> parametr, in which contains the value of current string</param>
         /// <param name="initialLine">the line, which contains the subline, which will be replaced</param> 
         /// <param name="replacingLine">the line, which contains the replacing subline</param> 
-        public void ReadOfLines(string line, out string initialLine, out string replacingLine)
+        public void ReadLines(string line, out string initialLine, out string replacingLine)
         {
             using (StreamReader streamReader = new StreamReader(line))
             {
