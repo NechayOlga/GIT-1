@@ -15,7 +15,7 @@ namespace RandomReplacementPartsOfLines
                 }
                 initialLine = streamReader.ReadLine();
                 replacingLine = streamReader.ReadLine();
-                if ((initialLine == null)||(replacingLine == null))
+                if ((initialLine == string.Empty)||(replacingLine == null))
                 {
                     throw new ArgumentNullException();
                 }                

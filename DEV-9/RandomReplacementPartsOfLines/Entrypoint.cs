@@ -37,7 +37,8 @@ namespace RandomReplacementPartsOfLines
             catch(ArgumentNullException)
             {
                 Console.WriteLine("The line in text file is absent. Add the line to text file.");
-            }                      
+            }
+            Console.ReadKey();
         }
     }
 }
