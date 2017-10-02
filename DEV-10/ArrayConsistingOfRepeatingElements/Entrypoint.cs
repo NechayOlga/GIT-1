@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArrayConsistingOfRepeatingElements
 {
@@ -24,28 +20,35 @@ namespace ArrayConsistingOfRepeatingElements
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Outputer outputer = new Outputer();
-            Random randomValue = new Random();
-            Random randomNumber = new Random();
-            Random randomSize = new Random();
-            SuperArrayCreator superArrayCreator = new SuperArrayCreator();
-            List<double[]> superArray = superArrayCreator.CreateSuperArray(randomValue, randomNumber, randomSize);
-            outputer.OutputInitialArrays(superArray);
-
-            RepeatingNumbersArrayCreator repeatingNumbersVreator = new RepeatingNumbersArrayCreator();
-
-            ArrayChecker arrayChecker = new ArrayChecker();
-            bool checker = arrayChecker.CheckArrayEmptiness(repeatingNumbersVreator.CreateRepeatingNumbersArray(superArray));
-            if(checker == true)
+            try
             {
+                Outputer outputer = new Outputer();
+                Random randomValue = new Random();
+                Random randomNumber = new Random();
+                Random randomSize = new Random();
+                SuperArrayCreator superArrayCreator = new SuperArrayCreator();
+                List<double[]> superArray = superArrayCreator.CreateSuperArray(randomValue, randomNumber, randomSize);
+                outputer.OutputInitialArrays(superArray);
 
-                outputer.OutputMessegeOfEmptiness(); 
+                RepeatingNumbersArrayCreator repeatingNumbersVreator = new RepeatingNumbersArrayCreator();
+
+                ArrayChecker arrayChecker = new ArrayChecker();
+                bool checker = arrayChecker.CheckArrayEmptiness(repeatingNumbersVreator.CreateRepeatingNumbersArray(superArray));
+                if (checker == true)
+                {
+
+                    outputer.OutputMessegeOfEmptiness();
+                }
+                else
+                {
+                    outputer.OutputResultArray(repeatingNumbersVreator.CreateRepeatingNumbersArray(superArray));
+                }
+                Console.ReadKey();
             }
-            else
+            catch (OutOfMemoryException)
             {
-                outputer.OutputResultArray(repeatingNumbersVreator.CreateRepeatingNumbersArray(superArray));
+                Console.WriteLine("It's memory exception.");
             }
-            Console.ReadKey();
         }
     }
 }
