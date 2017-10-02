@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Entrypoint.cs" />
     <Compile Include="LinesReader.cs" />
-    <Compile Include="RandomNumbersBuilder.cs" />
     <Compile Include="LinesBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

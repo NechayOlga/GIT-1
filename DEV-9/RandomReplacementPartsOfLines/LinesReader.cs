@@ -14,14 +14,14 @@ namespace RandomReplacementPartsOfLines
         /// initial and replaving lines
         /// from text file
         /// </summary>
-        /// <param ="line"> parametr, in which contains the value of current string</param>
+        /// <param ="currentLine"> parameter, in which contains the value of current string</param>
         /// <param name="initialLine">the line, which contains the subline, which will be replaced</param> 
         /// <param name="replacingLine">the line, which contains the replacing subline</param> 
-        public void ReadLines(string line, out string initialLine, out string replacingLine)
+        public void ReadLines(string currentLine, out string initialLine, out string replacingLine)
         {
-            using (StreamReader streamReader = new StreamReader(line))
+            using (StreamReader streamReader = new StreamReader(currentLine))
             {
-                if(line == null)
+                if(currentLine == null)
                 {
                     throw new FileNotFoundException();
                 }

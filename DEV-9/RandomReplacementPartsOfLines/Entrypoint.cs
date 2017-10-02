@@ -27,12 +27,21 @@ namespace RandomReplacementPartsOfLines
                 linesReader.ReadLines(line, out string initialLine, out string replacingLine);
 
                 //Creating of replaced and replacing sublines
-                LinesBuilder sublinesBuilder = new LinesBuilder(initialLine, replacingLine);
-                string replacedSubline = sublinesBuilder.BuildReplacedSubline();
-                string replacingSubline = sublinesBuilder.BuildReplacingSubline();
+                LinesBuilder replacedSublineAndResultLineBuilder = new LinesBuilder(initialLine);
+
+                Random randomNumber = new Random(); 
+
+                int beginningOfReplacedSubline = randomNumber.Next(0, initialLine.Length);
+                int lengthOfReplacedSubline = randomNumber.Next(1,initialLine.Length - beginningOfReplacedSubline);
+                string replacedSubline = replacedSublineAndResultLineBuilder.BuildSubline(beginningOfReplacedSubline, lengthOfReplacedSubline);
+
+                LinesBuilder replacingSublineBuilder = new LinesBuilder(replacingLine);
+                int beginningOfReplacingSubline = randomNumber.Next(0, replacingLine.Length);
+                int lengthOfReplacingSubline = randomNumber.Next(1, replacingLine.Length - beginningOfReplacingSubline);
+                string replacingSubline = replacingSublineBuilder.BuildSubline(beginningOfReplacingSubline, lengthOfReplacingSubline);
 
                 //Creating of result line with replacing parts
-                string resultLine = sublinesBuilder.ReplaceSublines(initialLine, replacedSubline, replacingSubline);
+                string resultLine = replacedSublineAndResultLineBuilder.ReplaceSublines(initialLine, replacedSubline, replacingSubline);
 
                 //Outputing of initial, replacing and result lines
                 Console.WriteLine(initialLine);

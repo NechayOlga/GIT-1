@@ -10,37 +10,22 @@ namespace RandomReplacementPartsOfLines
         /// </summary>
         public string InitialLine
         { get; private set; }
-        public string ReplacingLine
-        { get; private set; }
-        public LinesBuilder(string initialLine, string replacingLine)
+        public LinesBuilder(string initialLine)
         {
             InitialLine = initialLine;
-            ReplacingLine = replacingLine;
         }
       
-        RandomNumbersBuilder randomNumberBuilder = new RandomNumbersBuilder();
+        //RandomNumbersBuilder randomNumberBuilder = new RandomNumbersBuilder();
         /// <summary>
-        /// Method builds the replaced subline - subline, which will be replaced
+        /// Method builds  sublines
         /// </summary>
         /// <returns>string replacedSubline</returns>
-        public string BuildReplacedSubline()
-        {
-            int beginningOfReplacedSubline = randomNumberBuilder.BuildBeginningOfSubline(InitialLine);
-            int lengthOfReplacedSubline = randomNumberBuilder.BuildLengthOfSubline(InitialLine, beginningOfReplacedSubline);
-            string replacedSubline = InitialLine.Substring(beginningOfReplacedSubline, lengthOfReplacedSubline);
-            return replacedSubline;
+        public string BuildSubline(int beginningOfSubline, int lengthOfSubline)
+        {        
+            string subline = InitialLine.Substring(beginningOfSubline, lengthOfSubline);
+            return subline;           
         }
-        /// <summary>
-        /// Method builds the replacing subline - subline, on which will be changed replaced subline
-        /// </summary>
-        /// <returns>string replacingSubline</returns>
-        public string BuildReplacingSubline()
-        {
-            int beginningOfReplacingSubline = randomNumberBuilder.BuildBeginningOfSubline(ReplacingLine);
-            int lengthOfReplacingSubline = randomNumberBuilder.BuildLengthOfSubline(ReplacingLine, beginningOfReplacingSubline);
-            string replacingSubline = ReplacingLine.Substring(beginningOfReplacingSubline, lengthOfReplacingSubline);
-            return replacingSubline;
-        }
+        
         /// <summary>
         /// Method replaces sublines
         /// </summary>
