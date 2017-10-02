@@ -49,6 +49,11 @@ namespace ArrayConsistingOfRepeatingElements
             {
                 Console.WriteLine("It's memory exception.");
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadKey();
         }
     }
 }
