@@ -7,30 +7,29 @@ namespace TranslitLinesTransformation
   /// <summary>
   /// The entry point of programm.
   /// </summary>
-	class Program
+  class EntryPoint
   {
-	private const string cyrillicsToLatin = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\CyrillicsToLatin.txt";
-  private const string latinFromCyrillic = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\LatinFromCyrillics.txt";
-  private const string latinToCyrillics = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\LatinToCyrillics.txt";
-  private const string cyrillicsFromLatin = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\CyrillicsFromLatin.txt";
+    private const string cyrillicsToLatin = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\CyrillicsToLatin.txt";
+    private const string latinFromCyrillic = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\LatinFromCyrillics.txt";
+    private const string latinToCyrillics = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\LatinToCyrillics.txt";
+    private const string cyrillicsFromLatin = @"e:\TAT\GIT-1\DEV-11\TranslitLinesTransformation\CyrillicsFromLatin.txt";
 
-  const string INVALIDLINE = "Line is invalid. Line must be olny cyrillics or only latin";
-  const string FILENOTFOUND = "The text file isn't found.";
-  const string NONTRASLITLINE = "This line can't be transformed to translit";
-
-		/// <summary>
-		/// The inputed line is created.
+    const string INVALIDLINE = "Line is invalid. Line must be olny cyrillics or only latin";
+    const string FILENOTFOUND = "The text file isn't found.";
+    const string NONTRASLITLINE = "This line can't be transformed to translit";
+    
+    /// <summary>
+    /// The inputed line is created.
     /// The object of SymbolsStorageCreator is created,
     /// method CreateSumbolsStorage is called and then dictionaries are filled.
     /// The object of ResultLineCreator is created, 
     /// method symbolsReplacer is called and symbols in inputed line are replaced.
     /// </summary>
-    /// <param name="args"></param>
-		static void Main(string[] args)
-		{
+    static void Main(string[] args)
+    {
 			try
-			{     
-				string inputedLine = Console.ReadLine();
+      {
+        string inputedLine = Console.ReadLine();
 
         SymbolsStorageCreator cyrillicsStorage = new SymbolsStorageCreator();
         Dictionary<string, string> CyrillicsToLatin = cyrillicsStorage.CreateSymbolsStorage(cyrillicsToLatin, latinFromCyrillic);
@@ -41,20 +40,20 @@ namespace TranslitLinesTransformation
       
         if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Cyrillics)
         {
-					inputedLine = symbolsReplacer.ReplacedLine(CyrillicsToLatin);
+          inputedLine = symbolsReplacer.ReplacedLine(CyrillicsToLatin);
         }
-				else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Latin)
+        else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Latin)
         {
-					inputedLine = symbolsReplacer.ReplacedLine(LatinToCyrillics);
+          inputedLine = symbolsReplacer.ReplacedLine(LatinToCyrillics);
         }
         else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.NonExactlyLanguage)
         {
-					throw new InvalidLineException(INVALIDLINE);
+          throw new InvalidLineException(INVALIDLINE);
         }
-				else if((symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics)) == LanguageChoice.InvalidLine ||
+        else if((symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics)) == LanguageChoice.InvalidLine ||
                 (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics)) == LanguageChoice.DefaultValue)
-				{
-					throw new FormatException();
+        {
+          throw new FormatException();
         }
         Console.WriteLine(inputedLine);
         Console.ReadKey();

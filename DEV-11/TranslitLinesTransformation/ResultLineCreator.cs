@@ -38,13 +38,13 @@ namespace TranslitLinesTransformation
     {
       LanguageChoice language = LanguageChoice.DefaultValue;
       if (!(Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+")) &&
-        (Regex.IsMatch(InputedLine, "[x, q, j, w, h, X, Q, J, W, H]")))
+         (Regex.IsMatch(InputedLine, "[x, q, j, w, h, X, Q, J, W, H]")))
       {
         language = LanguageChoice.InvalidLine;
       }
       else if ((Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+"))||
               (!(Regex.IsMatch(InputedLine, "[x,q,j,w,h,X,Q,J,W,H]+"))) && 
-		          (Regex.IsMatch(InputedLine, "[a-zA-Z]+")))
+              (Regex.IsMatch(InputedLine, "[a-zA-Z]+")))
       {
         language = LanguageChoice.Latin;
         if (Regex.IsMatch(InputedLine, "[а-яА-Я]+"))

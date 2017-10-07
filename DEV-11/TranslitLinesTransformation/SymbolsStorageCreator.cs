@@ -17,14 +17,14 @@ namespace TranslitLinesTransformation
     /// <returns></returns>
     public Dictionary<string, string> CreateSymbolsStorage(string transformatedSymbols, string transformatingSymbols)
     {
-			Dictionary<string,string> SymbolsStorage = new Dictionary<string, string>();
+      Dictionary<string,string> SymbolsStorage = new Dictionary<string, string>();
       Encoding enc = Encoding.GetEncoding(1251);
       using (StreamReader transformatedSymbol = new StreamReader(transformatedSymbols, enc),
-                          transformatingSymbol = new StreamReader(transformatingSymbols, enc))
+                        transformatingSymbol = new StreamReader(transformatingSymbols, enc))
       {
-				while ((!transformatedSymbol.EndOfStream) || (!transformatingSymbol.EndOfStream))
+        while ((!transformatedSymbol.EndOfStream) || (!transformatingSymbol.EndOfStream))
         {
-					SymbolsStorage.Add(transformatedSymbol.ReadLine(), transformatingSymbol.ReadLine());
+          SymbolsStorage.Add(transformatedSymbol.ReadLine(), transformatingSymbol.ReadLine());
         }
       }
       return SymbolsStorage;
