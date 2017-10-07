@@ -8,7 +8,7 @@ namespace TranslitLinesTransformation
   /// enum LanguageChoice contains
   /// markers of language
   /// </summary>
-	public enum LanguageChoice
+  public enum LanguageChoice
   {
 		Latin,
     Cyrillics,
