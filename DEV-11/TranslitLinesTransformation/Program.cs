@@ -27,7 +27,7 @@ namespace TranslitLinesTransformation
     /// </summary>
     /// <param name="args"></param>
 		static void Main(string[] args)
-    {
+		{
 			try
 			{     
 				string inputedLine = Console.ReadLine();
@@ -73,5 +73,5 @@ namespace TranslitLinesTransformation
       }
       Console.ReadKey();
     }
-  }
+ }
 }
