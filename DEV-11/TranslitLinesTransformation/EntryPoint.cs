@@ -72,5 +72,5 @@ namespace TranslitLinesTransformation
       }
       Console.ReadKey();
     }
- }
+  }
 }
