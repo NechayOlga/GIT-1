@@ -45,18 +45,17 @@ namespace TranslitLinesTransformation
       else if ((Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+"))||
               (!(Regex.IsMatch(InputedLine, "[x,q,j,w,h,X,Q,J,W,H]+"))) && 
 		          (Regex.IsMatch(InputedLine, "[a-zA-Z]+")))
-			{
-				language = LanguageChoice.Latin;
-
+      {
+        language = LanguageChoice.Latin;
         if (Regex.IsMatch(InputedLine, "[а-яА-Я]+"))
-				{
-					language = LanguageChoice.NonExactlyLanguage;
+        {
+          language = LanguageChoice.NonExactlyLanguage;
         }
-			}          
+      }
       else if (Regex.IsMatch(InputedLine, "[а-яА-Я]+"))
       {
-				language = LanguageChoice.Cyrillics;
-			}       
+        language = LanguageChoice.Cyrillics;
+      }
       return language;
     }
 
@@ -67,10 +66,10 @@ namespace TranslitLinesTransformation
     /// <returns>line with replaced simbols</returns>
     public string ReplacedLine(Dictionary<string, string> transformatedSymbols)
     {
-			foreach (KeyValuePair<string, string> kvp in transformatedSymbols)
-			{
-				InputedLine = InputedLine.Replace(kvp.Key, kvp.Value);
-			}
+      foreach (KeyValuePair<string, string> kvp in transformatedSymbols)
+      {
+        InputedLine = InputedLine.Replace(kvp.Key, kvp.Value);
+      }
       return InputedLine;
     }
   }
