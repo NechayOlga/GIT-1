@@ -41,8 +41,7 @@ namespace TranslitLinesTransformation
       {
         language = LanguageChoice.InvalidLine;
       }    
-      else if ((Regex.IsMatch(InputedLine, "^[xqjwXQJW]")) && 
-              (Regex.IsMatch(InputedLine, "[a-zA-Z]+")))
+      else if (Regex.IsMatch(InputedLine, "[a-zA-Z]+"))
       {
         language = LanguageChoice.Latin;
         if (Regex.IsMatch(InputedLine, "[а-яА-Я]+"))
