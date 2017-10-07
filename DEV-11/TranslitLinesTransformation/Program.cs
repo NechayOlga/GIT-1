@@ -40,31 +40,21 @@ namespace TranslitLinesTransformation
                 if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Cyrillics)
                 {
                     inputedLine = symbolsReplacer.ReplacedLine(CyrillicsToLatin);
-                    if (inputedLine.Equals(checkerLine))
-                    {
-                        Console.WriteLine(NONTRASLITLINE);
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputedLine);
-                    }
                 }
                 else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Latin)
                 {
                     inputedLine = symbolsReplacer.ReplacedLine(LatinToCyrillics);
-                    if (inputedLine.Equals(checkerLine))
-                    {
-                        Console.WriteLine(NONTRASLITLINE);
-                    }
-                    else
-                    {
-                        Console.WriteLine(inputedLine);
-                    }
                 }
                 else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.NonExactlyLanguage)
                 {
                     throw new InvalidLineException(INVALIDLINE);
                 }
+                else if(symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.InvalidLine &&
+                        symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.DefaultValue)
+                {
+                    throw new FormatException();
+                }
+                Console.WriteLine(inputedLine);
                 Console.ReadKey();
             }
             catch (InvalidLineException message)
@@ -74,6 +64,10 @@ namespace TranslitLinesTransformation
             catch (FileNotFoundException)
             {
                 Console.WriteLine(FILENOTFOUND);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine(NONTRASLITLINE);
             }
             Console.ReadKey();
         }

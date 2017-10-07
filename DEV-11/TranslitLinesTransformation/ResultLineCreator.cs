@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace TranslitLinesTransformation
 {
@@ -11,7 +13,8 @@ namespace TranslitLinesTransformation
         Latin,
         Cyrillics,
         NonExactlyLanguage,
-        EmptyLine
+        InvalidLine,
+        DefaultValue
     }
     /// <summary>
     /// Class is for creating the result line
@@ -31,24 +34,28 @@ namespace TranslitLinesTransformation
         /// <param name="CyrillicsToLatin">is dictionary contains cyrrillics symbols as keys and latin as values</param>
         /// <param name="LatinToCyrillics">is dictionary contains latin symbols as keys and cyrillics as values</param>
         /// <returns>marker of relevant language</returns>
-        public LanguageChoice Language(Dictionary<string , string> CyrillicsToLatin, Dictionary<string, string> LatinToCyrillics)
+        public LanguageChoice Language(Dictionary<string, string> CyrillicsToLatin, Dictionary<string, string> LatinToCyrillics)
         {
-            LanguageChoice language = LanguageChoice.Latin;
-            foreach (KeyValuePair<string, string> cyrillicsToLatin in CyrillicsToLatin)
+            StringBuilder checkerOfSymbolsQuantity = new StringBuilder();
+            LanguageChoice language = LanguageChoice.DefaultValue;
+            if(Regex.IsMatch(InputedLine, "[x,q,j,w,X,Q,J,W]+"))
             {
-                if (InputedLine.Contains(cyrillicsToLatin.Key))
-                {
-                    language = LanguageChoice.Cyrillics;
-                }
-                foreach (KeyValuePair<string, string> latinToCyrillics in LatinToCyrillics)
-                {
-                    if (InputedLine.Contains(latinToCyrillics.Key)&&InputedLine.Contains(cyrillicsToLatin.Key))
-                    {
-                        language = LanguageChoice.NonExactlyLanguage;
-                    }
-                }
+                language = LanguageChoice.InvalidLine;
             }
-             return language;
+            else if (Regex.IsMatch(InputedLine, "[а-яА-Я]+") && Regex.IsMatch(InputedLine, "[a-zA-A]+")) 
+            {
+                language = LanguageChoice.NonExactlyLanguage;
+            }
+            else if (Regex.IsMatch(InputedLine, "[а-яА-Я]+"))
+            {
+                language = LanguageChoice.Cyrillics;
+            }
+
+            else if (Regex.IsMatch(InputedLine, "[a-zA-A]+"))
+            {
+                language = LanguageChoice.Latin;
+            }          
+            return language;
         }
 
         /// <summary>
