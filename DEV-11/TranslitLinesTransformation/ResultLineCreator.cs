@@ -37,13 +37,11 @@ namespace TranslitLinesTransformation
     public LanguageChoice Language(Dictionary<string, string> CyrillicsToLatin, Dictionary<string, string> LatinToCyrillics)
     {
       LanguageChoice language = LanguageChoice.DefaultValue;
-      if (!(Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+")) &&
-         (Regex.IsMatch(InputedLine, "[x, q, j, w, h, X, Q, J, W, H]")))
+      if (Regex.IsMatch(InputedLine, "[xqjwXQJW]"))
       {
         language = LanguageChoice.InvalidLine;
-      }
-      else if ((Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+"))||
-              (!(Regex.IsMatch(InputedLine, "[x,q,j,w,h,X,Q,J,W,H]+"))) && 
+      }    
+      else if ((Regex.IsMatch(InputedLine, "^[xqjwXQJW]")) && 
               (Regex.IsMatch(InputedLine, "[a-zA-Z]+")))
       {
         language = LanguageChoice.Latin;
