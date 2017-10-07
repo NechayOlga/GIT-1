@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace TranslitLinesTransformation
 {
-	/// <summary>
+  /// <summary>
   /// enum LanguageChoice contains
   /// markers of language
   /// </summary>
