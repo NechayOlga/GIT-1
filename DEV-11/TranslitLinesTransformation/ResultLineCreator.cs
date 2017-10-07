@@ -10,7 +10,7 @@ namespace TranslitLinesTransformation
   /// </summary>
   public enum LanguageChoice
   {
-		Latin,
+    Latin,
     Cyrillics,
     NonExactlyLanguage,
     InvalidLine,
@@ -22,11 +22,11 @@ namespace TranslitLinesTransformation
   /// </summary>
   class ResultLineCreator
   {
-		public string InputedLine
+    public string InputedLine
     { get; private set; }
     public ResultLineCreator(string inputedLine)
     {
-			InputedLine = inputedLine;
+      InputedLine = inputedLine;
     }
     /// <summary>
     /// Method is for choose the rigth language.
@@ -35,12 +35,12 @@ namespace TranslitLinesTransformation
     /// <param name="LatinToCyrillics">is dictionary contains latin symbols as keys and cyrillics as values</param>
     /// <returns>marker of relevant language</returns>
     public LanguageChoice Language(Dictionary<string, string> CyrillicsToLatin, Dictionary<string, string> LatinToCyrillics)
-		{
-			LanguageChoice language = LanguageChoice.DefaultValue;
+    {
+      LanguageChoice language = LanguageChoice.DefaultValue;
       if (!(Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+")) &&
-			     (Regex.IsMatch(InputedLine, "[x, q, j, w, h, X, Q, J, W, H]")))
+        (Regex.IsMatch(InputedLine, "[x, q, j, w, h, X, Q, J, W, H]")))
       {
-			  language = LanguageChoice.InvalidLine;
+        language = LanguageChoice.InvalidLine;
       }
       else if ((Regex.IsMatch(InputedLine, "[sh, shch,kh,zh,ch,SH,SHCH,KH,ZH,CH]+"))||
               (!(Regex.IsMatch(InputedLine, "[x,q,j,w,h,X,Q,J,W,H]+"))) && 
