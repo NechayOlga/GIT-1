@@ -27,7 +27,7 @@ namespace TranslitLinesTransformation
     /// </summary>
     static void Main(string[] args)
     {
-			try
+      try
       {
         string inputedLine = Console.ReadLine();
 

@@ -4,12 +4,12 @@ using System.Text;
 
 namespace TranslitLinesTransformation
 {
-	/// <summary>
+  /// <summary>
   /// Class is for filling dictionary.
   /// </summary>
   class SymbolsStorageCreator
   {
-		/// <summary>
+    /// <summary>
     /// Method fills dictionatry with relevant symbols.
     /// </summary>
     /// <param name="transformatedSymbols">line of symbols that should be transformated</param>
