@@ -29,22 +29,22 @@ namespace TranslitLinesTransformation
     {
       try
       {
-        string inputedLine = Console.ReadLine();
+        string replacedLine = Console.ReadLine();
 
         SymbolsStorageCreator cyrillicsStorage = new SymbolsStorageCreator();
         Dictionary<string, string> CyrillicsToLatin = cyrillicsStorage.CreateSymbolsStorage(cyrillicsToLatin, latinFromCyrillic);
         SymbolsStorageCreator latinStorage = new SymbolsStorageCreator();
         Dictionary<string, string> LatinToCyrillics = latinStorage.CreateSymbolsStorage(latinToCyrillics, cyrillicsFromLatin);
 
-        ResultLineCreator symbolsReplacer = new ResultLineCreator(inputedLine);
+        ResultLineCreator symbolsReplacer = new ResultLineCreator(replacedLine);
       
         if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Cyrillics)
         {
-          inputedLine = symbolsReplacer.ReplacedLine(CyrillicsToLatin);
+          replacedLine = symbolsReplacer.ReplacedLine(CyrillicsToLatin);
         }
         else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.Latin)
         {
-          inputedLine = symbolsReplacer.ReplacedLine(LatinToCyrillics);
+          replacedLine = symbolsReplacer.ReplacedLine(LatinToCyrillics);
         }
         else if (symbolsReplacer.Language(CyrillicsToLatin, LatinToCyrillics) == LanguageChoice.NonExactlyLanguage)
         {
@@ -55,7 +55,7 @@ namespace TranslitLinesTransformation
         {
           throw new FormatException();
         }
-        Console.WriteLine(inputedLine);
+        Console.WriteLine(replacedLine);
         Console.ReadKey();
       }
       catch (InvalidLineException message)
