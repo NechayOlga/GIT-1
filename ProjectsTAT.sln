@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomReplacementPartsOfLin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslitLinesTransformation", "DEV-11\TranslitLinesTransformation\TranslitLinesTransformation.csproj", "{9AB75D06-192D-469E-8C64-9E39297BD123}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayConsistingOfRepeatingElements", "DEV-10\ArrayConsistingOfRepeatingElements\ArrayConsistingOfRepeatingElements.csproj", "{4098C32B-34A9-49C8-A048-2CCF874DB375}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4098C32B-34A9-49C8-A048-2CCF874DB375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4098C32B-34A9-49C8-A048-2CCF874DB375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4098C32B-34A9-49C8-A048-2CCF874DB375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4098C32B-34A9-49C8-A048-2CCF874DB375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
