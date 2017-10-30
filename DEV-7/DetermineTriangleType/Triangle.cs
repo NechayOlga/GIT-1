@@ -1,6 +1,6 @@
 ﻿namespace DetermineTriangleType
 { 
-   abstract class Triangle
+   public abstract class Triangle
    {
         public Sides Sides
         { get; }

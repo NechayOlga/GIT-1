@@ -47,7 +47,7 @@
     <Compile Include="Sides.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Equilateral.cs" />
-    <Compile Include="Versalite.cs" />
+    <Compile Include="Versatile.cs" />
     <Compile Include="Isosceles.cs" />
     <Compile Include="InputSides.cs" />
     <Compile Include="Entrypoint.cs" />

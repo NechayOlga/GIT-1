@@ -1,18 +1,14 @@
 ﻿using System;
 namespace DetermineTriangleType
 {
-    enum TriangleType
+    public enum TriangleType
     {
         EQUILATERAL,
         ISOSCELES,
-        VERSALITE
+        VERSATILE
     }
-    class Builder
+    public class Builder
     {
-        
-        const string EQUILATERAL = "Triangle is equilateral";
-        const string ISOSCELES = "Triangle is isosceles";
-        const string VERSALITE = "Triangle is versalite";
         double EPS = Double.Epsilon;
         public Builder(Sides sides)
         {
@@ -29,16 +25,16 @@ namespace DetermineTriangleType
                     return new Equilateral(sides);
                 case TriangleType.ISOSCELES:
                     return new Isosceles(sides);
-                case TriangleType.VERSALITE:
-                    return new Versalite(sides);
+                case TriangleType.VERSATILE:
+                    return new Versatile(sides);
                 default:
                     throw new InvalidOperationException();
             }
         }
 
-        TriangleType DetermineType(Sides sides)
+        public TriangleType DetermineType(Sides sides)
         {
-            TriangleType triangleType = TriangleType.VERSALITE;
+            TriangleType triangleType = TriangleType.VERSATILE;
             if ((Math.Abs(sides.sideA - sides.sideB) < EPS) && (Math.Abs(sides.sideA - sides.sideC) < EPS) &&
                                                         (Math.Abs(sides.sideB - sides.sideC) < EPS))
             {
