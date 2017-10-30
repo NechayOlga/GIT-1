@@ -1,6 +1,6 @@
 ﻿namespace DetermineTriangleType
 {
-    struct Sides
+    public struct Sides
     {
         public double sideA;
         public double sideB;
