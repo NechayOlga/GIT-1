@@ -1,9 +1,9 @@
 ﻿namespace DetermineTriangleType
 {
-    class Versatile:Triangle
+    class Versalite:Triangle
     {
         const string VERSALITE = "Triangle is versalite";
-        public Versatile(Sides sides) : base(sides) { }
+        public Versalite(Sides sides) : base(sides) { }
         public override string GetTriangleType()
         {
             return VERSALITE;

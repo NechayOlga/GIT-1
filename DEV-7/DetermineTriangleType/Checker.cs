@@ -8,7 +8,7 @@ namespace DetermineTriangleType
         const string NOT_EXIST = "Triangle with such sides doesn't exist";
         string resultCheck = String.Empty;
         bool checker = false;
-        public bool ValidCheck(Sides sides)
+        public bool ValidChecker(Sides sides)
         {                    
             if ((sides.sideA < 0)||(sides.sideB < 0)||(sides.sideC < 0))
             {              
@@ -16,7 +16,7 @@ namespace DetermineTriangleType
             }
             return checker;
         }
-        public bool ExistanceCheck(Sides sides)
+        public bool ExistanceChecker(Sides sides)
         {
             if ((Math.Abs(sides.sideA + sides.sideB) < sides.sideC) || (Math.Abs(sides.sideA + sides.sideC) < sides.sideB)
                                                                    || (Math.Abs(sides.sideB + sides.sideC) < sides.sideA))

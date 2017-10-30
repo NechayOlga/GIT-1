@@ -21,12 +21,12 @@ namespace DetermineTriangleType
                     sides.sideB = inputSides.Input();
                     sides.sideC = inputSides.Input();
                     Checker checker = new Checker();
-                    if (checker.ValidCheck(sides))
+                    if (checker.ValidChecker(sides))
                     {
                         Console.WriteLine(INVALID_RESULT);
                         continue;
                     }
-                    if (checker.ExistanceCheck(sides))
+                    if (checker.ExistanceChecker(sides))
                     {
                         Console.WriteLine(NOT_EXIST);
                         continue;
