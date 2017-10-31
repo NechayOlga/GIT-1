@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayConsistingOfRepeatingE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslitLinesTransformation", "DEV-11\TranslitLinesTransformation\TranslitLinesTransformation.csproj", "{9AB75D06-192D-469E-8C64-9E39297BD123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetermineTriangleType.Tests", "DEV-7\DetermineTriangleType.Tests\DetermineTriangleType.Tests\DetermineTriangleType.Tests.csproj", "{12AB5992-84A8-431E-B870-FF7BB0586CC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetermineTriangleType.Tests", "DEV-7\DetermineTriangleType.Tests\DetermineTriangleType.Tests.csproj", "{A69480B7-2740-4097-8D9C-DC9F2716B2EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,10 +88,10 @@ Global
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AB75D06-192D-469E-8C64-9E39297BD123}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12AB5992-84A8-431E-B870-FF7BB0586CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12AB5992-84A8-431E-B870-FF7BB0586CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12AB5992-84A8-431E-B870-FF7BB0586CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12AB5992-84A8-431E-B870-FF7BB0586CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69480B7-2740-4097-8D9C-DC9F2716B2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69480B7-2740-4097-8D9C-DC9F2716B2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69480B7-2740-4097-8D9C-DC9F2716B2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69480B7-2740-4097-8D9C-DC9F2716B2EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

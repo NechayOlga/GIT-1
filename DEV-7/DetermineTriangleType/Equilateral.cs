@@ -1,6 +1,6 @@
 ﻿namespace DetermineTriangleType
 {
-    class Equilateral:Triangle
+    public class Equilateral:Triangle
     {
         const string EQUILATERAL = "Triangle is equilateral";
         public Equilateral(Sides sides) : base(sides) { }

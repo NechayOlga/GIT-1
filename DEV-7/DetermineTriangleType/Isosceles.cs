@@ -1,6 +1,6 @@
 ﻿namespace DetermineTriangleType
 {
-    class Isosceles:Triangle
+    public class Isosceles:Triangle
     {
         const string ISOSCELES = "Triangle is isosceles";
         public Isosceles(Sides sides) : base(sides) { }

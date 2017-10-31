@@ -12,23 +12,23 @@ namespace DetermineTriangleType.Tests
 
     Sides sidesForVersatileTriangle = new Sides()
     {
-      sideA = 1.7,
-      sideB = 2.5,
-      sideC = 3.1
+      sideA = 1,
+      sideB = 2,
+      sideC = 3
     };
 
     Sides sidesForEquilateralTriangle = new Sides()
     {
-      sideA = 1.8,
-      sideB = 1.8,
-      sideC = 1.8
+      sideA = 1,
+      sideB = 1,
+      sideC = 1
     };
 
     Sides sidesForIsoscelesTriangle = new Sides()
     {
-      sideA = 1.0,
-      sideB = 1.0,
-      sideC = 2.8
+      sideA = 1,
+      sideB = 1,
+      sideC = 2
     };
     [TestMethod]
     public void TestDetermineType_sideA_1_sideB_2_sidec_3_VERSATILE_return()
@@ -70,6 +70,45 @@ namespace DetermineTriangleType.Tests
 
       //assert
       Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void TestBuild_sideA_1_sideB_1_sidec_1__EQUILATERAL_return()
+    {
+      //arrange
+      Builder builder = new Builder(sidesForEquilateralTriangle);
+
+      //act
+      Triangle actual = builder.Build(sidesForEquilateralTriangle);
+
+      //assert
+      Assert.IsInstanceOfType(actual, typeof(Equilateral));
+    }
+
+    [TestMethod]
+    public void TestBuild_sideA_1_sideB_2_sidec_3__VERSATILE_return()
+    {
+      //arrange
+      Builder builder = new Builder(sidesForVersatileTriangle);
+
+      //act
+      Triangle actual = builder.Build(sidesForVersatileTriangle);
+
+      //assert
+      Assert.IsInstanceOfType(actual, typeof(Versatile));
+    }
+
+    [TestMethod]
+    public void TestBuild_sideA_1_sideB_1_sidec_2__ISOSCELES_return()
+    {
+      //arrange
+      Builder builder = new Builder(sidesForIsoscelesTriangle);
+
+      //act
+      Triangle actual = builder.Build(sidesForIsoscelesTriangle);
+
+      //assert
+      Assert.IsInstanceOfType(actual, typeof(Isosceles));
     }
   }
 }
