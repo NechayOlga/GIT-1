@@ -2,11 +2,8 @@
 
 namespace DetermineTriangleType
 {
-    class Checker
+    public class Checker
     {
-        const string INVALID_RESULT = "Triangle with unpositive sides is invalid";
-        const string NOT_EXIST = "Triangle with such sides doesn't exist";
-        string resultCheck = String.Empty;
         bool checker = false;
         public bool ValidCheck(Sides sides)
         {                    

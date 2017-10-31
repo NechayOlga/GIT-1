@@ -6,6 +6,10 @@ namespace DetermineTriangleType.Tests
   [TestClass]
   public class BuilderTests
   {
+    const string EQUILATERAL = "Triangle is equilateral";
+    const string ISOSCELES = "Triangle is isosceles";
+    const string VERSALITE = "Triangle is versalite";
+
     Sides sidesForVersatileTriangle = new Sides()
     {
       sideA = 1.7,
