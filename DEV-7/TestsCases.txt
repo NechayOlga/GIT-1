@@ -1,0 +1,39 @@
+IDPriorityProjectModuleSummarySTRExpected ResultID 1DetermineTriangleTypeBuilderTriangle with equal positive lengths of sides
+
+1. Enter three equal positive  sides
+2. Check the type of triangle
+
+1.Sides are initialized
+2.Triangle type is defined “Equilateral” 
+ID 2DetermineTriangleTypeBuilderTriangle with all not equal positive lengths of sides
+
+1. Enter three not equal positive lengths sides
+2. Check the type of triangle
+
+1. Sides are initialized
+2.Triangle type is defined “Versatile” 
+ID 3DetermineTriangleTypeBuilderTriangle with two equal positive lengths of sides and one not equal  length of positive side
+
+1. Enter two equal positive sides and one not equal positive side
+2. Check the type of triangle
+
+1.  Sides are initialized
+2.Triangle type is defined “Isosceles” 
+ID 4DetermineTriangleTypeCheckerCheck warning message if one of sides has negative length
+
+1. Enter one negative length of side of triangle and two positive lengths of sides.
+
+
+1. The message of invalid triangle is on screen.
+ID 5DetermineTriangleTypeCheckerCheck warning message if one of sides has incorrect length
+
+1. Enter two correct sides and one side, that is more than sum of this two sides.
+
+1. The message of incorrect triangle is on screen.
+ID 6DetermineTriangleTypeCheckerTriangle with side of string type
+
+1. Enter side of triangle of string type
+
+
+1.The message of incorrect type of sides is on screen.
+
