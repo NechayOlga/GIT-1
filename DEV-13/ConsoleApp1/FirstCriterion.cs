@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace StaffRecruitment
 {
-  public class Lead:Employee
+  public class FirstCriterion : Criterion
   {
-    public Lead()
+    public int OutputedSum;
+    public  void CountEmployees()
     {
-      salary = 1500;
-      productivity = 1000;
-      nameOfCategory = "Lead";
+      
     }
   }
 }

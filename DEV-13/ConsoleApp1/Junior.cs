@@ -4,30 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace StaffRecruitment
 {
-  class Junior:Employee
+  public class Junior:Employee
   {
-    public int Salary
-    { get
-      {
-        return salary;
-      }
-      private set
-      {
-        salary = 300;
-      }
-    }
-    public int Productivity
+    public Junior()
     {
-      get
-      {
-        return productivity;
-      }
-      private set
-      {
-        productivity = 100;
-      }
+      salary = 300;
+      productivity = 100;
+      nameOfCategory = "Junior";
     }
   }
 }

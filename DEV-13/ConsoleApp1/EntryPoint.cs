@@ -12,11 +12,9 @@ namespace StaffRecruitment
     {
       Counter counter = new Counter();
       StringBuilder stringBuilder = new StringBuilder();
-      List<List<int>> arrayForTwo = new List<List<int>>(counter.ForFour(8));
-      for (int i = 0; i < arrayForTwo.Count; i++)
-      {
-        Console.WriteLine(arrayForTwo[i][0] + " " + arrayForTwo[i][1] + " " + arrayForTwo[i][2] + " " + arrayForTwo[i][3]);
-      }
+      counter.OutputedSum = 3000;
+      counter.SalaryForFourEmployees();
+      Console.WriteLine(counter.ResultList());
       Console.ReadKey();
     }
   }

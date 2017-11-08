@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundsOfQuantityFinder.cs" />
     <Compile Include="Counter.cs" />
+    <Compile Include="Criterion.cs" />
+    <Compile Include="FirstCriterion.cs" />
+    <Compile Include="NumberOfEmployeesGenerator.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="ICountable.cs" />

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace StaffRecruitment
 {
-  class Employee
+  public class Employee
   {
-    protected int salary;
-    protected int productivity;
+    public int salary;
+    public int productivity;
+    public string nameOfCategory;
   }
 }

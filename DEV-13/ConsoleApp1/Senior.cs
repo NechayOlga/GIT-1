@@ -4,31 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace StaffRecruitment
 {
-  class Senior : Employee
+  public class Senior : Employee
   {
-    public int Salary
+    public Senior()
     {
-      get
-      {
-        return salary;
-      }
-      private set
-      {
-        salary = 1000;
-      }
-    }
-    public int Productivity
-    {
-      get
-      {
-        return productivity;
-      }
-      private set
-      {
-        productivity = 500;
-      }
+      salary = 1000;
+      productivity = 500;
+      nameOfCategory = "Senior";
     }
   }
 }
