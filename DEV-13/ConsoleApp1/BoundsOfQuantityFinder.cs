@@ -10,6 +10,7 @@ namespace StaffRecruitment
   {
     public Junior junior = new Junior();
     public Lead lead = new Lead();
+    public Middle middle = new Middle();
     public int FindMaxNumbersOfEmployeesFixSum(int outputedSum)
     {   
       int maxNumberOfEmployees = outputedSum / junior.salary;
@@ -31,6 +32,12 @@ namespace StaffRecruitment
     {
       int minNumberOfEmployees = outputedProductivity / lead.productivity;
       return minNumberOfEmployees;
+    }
+
+    public int FindMaxNumbersWithoudJuniorsFixProductivity(int outputedProductivity)
+    {
+      int maxNumberOfEmployees = outputedProductivity / middle.productivity;
+      return maxNumberOfEmployees;
     }
   }
 }

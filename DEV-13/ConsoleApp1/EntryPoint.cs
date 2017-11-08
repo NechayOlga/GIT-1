@@ -10,11 +10,11 @@ namespace StaffRecruitment
   {
     static void Main(string[] args)
     {
-      SecondCriterion secondCriterion = new SecondCriterion();
+      ThirdCriterion thirdCriterion = new ThirdCriterion();
       StringBuilder stringBuilder = new StringBuilder();
-      secondCriterion.OutputedProductivity = 3000;
-      secondCriterion.ProductivityForFourEmployees();
-      Console.WriteLine(secondCriterion.ResultList());
+      thirdCriterion.OutputedProductivity = 500;
+      thirdCriterion.ProductivityForFourEmployees();
+      Console.WriteLine(thirdCriterion.ResultList());
       Console.ReadKey();
     }
   }
