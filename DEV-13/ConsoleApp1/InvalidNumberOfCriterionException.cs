@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-  interface ICountable
+  class InvalidNumberOfCriterionException
   {
-    void CountOneCategory();
-    void CountTwoCategories();
-    void CountThreeCategories();
-    void CountFourCategories();
   }
 }

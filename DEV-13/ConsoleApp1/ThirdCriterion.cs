@@ -67,8 +67,9 @@ namespace StaffRecruitment
       int counter = 0;
       for(int i = 0; i < placementOfNumbers.Count; i++)
       {
-        if(placementOfNumbers[i][0] < countNumber)
+        if(placementOfNumbers[i][0] > countNumber)
         {
+          countNumber = placementOfNumbers[i][0];
           counter = i;
         }
       }
@@ -76,7 +77,7 @@ namespace StaffRecruitment
     }
     public string ResultList()
     {
-      return Result[FindIndexOfMaxJunior()];
+      return Result[FindIndexOfMaxJunior() - 1];
     }
   }
 }

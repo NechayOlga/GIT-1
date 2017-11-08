@@ -11,8 +11,7 @@ namespace StaffRecruitment
     static void Main(string[] args)
     {
       ThirdCriterion thirdCriterion = new ThirdCriterion();
-      StringBuilder stringBuilder = new StringBuilder();
-      thirdCriterion.OutputedProductivity = 500;
+      thirdCriterion.OutputedProductivity = 10000;
       thirdCriterion.ProductivityForFourEmployees();
       Console.WriteLine(thirdCriterion.ResultList());
       Console.ReadKey();
