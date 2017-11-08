@@ -2,7 +2,7 @@
 
 namespace DetermineTriangleType
 {
-    class InputSides
+    public class InputSides
     {
         const string ENTER_SIDES = "Enter side of triangle: ";
         public double Input()
@@ -10,8 +10,6 @@ namespace DetermineTriangleType
             Console.WriteLine(ENTER_SIDES);
             double side = 0;
             side = double.Parse(Console.ReadLine());
-           // sides.sideB = double.Parse(Console.ReadLine());
-           // sides.sideC = double.Parse(Console.ReadLine());
             return side;
         }
     }

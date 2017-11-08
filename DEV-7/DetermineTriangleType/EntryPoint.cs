@@ -2,7 +2,7 @@
 
 namespace DetermineTriangleType
 {
-    class Entrypoint
+    public class Entrypoint
     {
         const string FORMAT_EXCEPTION = "Please, enter only numbers. Try again";
         const string CONTINUE_OR_EXIT = "Press OK to continue, press any key and ENTER to exit";
