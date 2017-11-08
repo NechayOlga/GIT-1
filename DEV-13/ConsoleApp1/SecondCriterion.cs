@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StaffRecruitment
 {
-  public class FirtstCriterion : Criterion
+  public class SecondCriterion : Criterion
   {
-    public List<int> Salary = new List<int>();
+    public List<int> Salary;
     public List<int> Productivity = new List<int>();
     public List<string> Result = new List<string>();
     public List<List<int>> placementOfNumbers = new List<List<int>>();
@@ -18,11 +18,12 @@ namespace StaffRecruitment
     public BoundsOfQuantityFinder boundsOfQuantityFinder = new BoundsOfQuantityFinder();
     public Employee employee;
 
-    public void SalaryForFourEmployees()
+    public void ProductivityForFourEmployees()
     {
+      Salary = new List<int>();
       numberOfEmployeesGenerator = new NumberOfEmployeesGenerator();
-      for (int p = boundsOfQuantityFinder.FindMinNumbersOfEmployeesFixSum(OutputedSum);
-            p < boundsOfQuantityFinder.FindMaxNumbersOfEmployeesFixSum(OutputedSum); p++)
+      for (int p = boundsOfQuantityFinder.FindMinNumbersOfEmployeesFixProductivity(OutputedProductivity);
+            p < boundsOfQuantityFinder.FindMaxNumbersOfEmployeesFixProductivity(OutputedProductivity); p++)
       {
         for (int i = 0; i < (p / 4) + 1; i++)
         {
@@ -39,13 +40,14 @@ namespace StaffRecruitment
       for (int i = 0; i < placementOfNumbers.Count; i++)
       {
         if (
-              placementOfNumbers[i][0] * junior.salary +
-              placementOfNumbers[i][1] * middle.salary +
-              placementOfNumbers[i][2] * senior.salary +
-              placementOfNumbers[i][3] * lead.salary == OutputedSum)
+              placementOfNumbers[i][0] * junior.productivity +
+              placementOfNumbers[i][1] * middle.productivity +
+              placementOfNumbers[i][2] * senior.productivity +
+              placementOfNumbers[i][3] * lead.productivity == OutputedProductivity)
         {
-          Productivity.Add((placementOfNumbers[i][0] * junior.productivity + placementOfNumbers[i][1] * middle.productivity +
-          placementOfNumbers[i][2] * senior.productivity + placementOfNumbers[i][3] * lead.productivity));
+          
+          Salary.Add((placementOfNumbers[i][0] * junior.salary + placementOfNumbers[i][1] * middle.salary +
+          placementOfNumbers[i][2] * senior.salary + placementOfNumbers[i][3] * lead.salary));
           StringBuilder resultString = new StringBuilder();
           resultString.Append((placementOfNumbers[i][0].ToString()));
           resultString.Append(junior.nameOfCategory);
@@ -60,12 +62,13 @@ namespace StaffRecruitment
       }
     }
 
-    public int FindMaxProductivity()
+    public int FindMinSalary()
     {
       int counter = 0;
-      for (int i = 0; i < Productivity.Count; i++)
-      {
-        if (Productivity[i] > counter)
+      int countSalary = Salary[0];
+      for (int i = 0; i < Salary.Count; i++)
+      {       
+        if (Salary[i] < counter)
         {
           counter = i;
         }
@@ -75,7 +78,8 @@ namespace StaffRecruitment
 
     public string ResultList()
     {
-      return Result[FindMaxProductivity()];
+      return Result[FindMinSalary()];
     }
   }
 }
+

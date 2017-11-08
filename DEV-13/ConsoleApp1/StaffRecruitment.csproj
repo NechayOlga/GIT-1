@@ -54,6 +54,7 @@
     <Compile Include="Lead.cs" />
     <Compile Include="Middle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondCriterion.cs" />
     <Compile Include="Senior.cs" />
   </ItemGroup>
   <ItemGroup>
