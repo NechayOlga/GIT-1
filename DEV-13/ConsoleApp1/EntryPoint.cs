@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace StaffRecruitment
 {
-  class Program
+  class EntryPoint
   {
     static void Main(string[] args)
     {
-      ThirdCriterion thirdCriterion = new ThirdCriterion();
-      thirdCriterion.OutputedProductivity = 10000;
-      thirdCriterion.ProductivityForFourEmployees();
-      Console.WriteLine(thirdCriterion.ResultList());
+      int OutputedSum = int.Parse(Console.ReadLine());
+      int OutputedProductivity = int.Parse(Console.ReadLine());
+      CriterionChooser criterionChooser = new CriterionChooser();
+      criterionChooser.ChooseCriterion(OutputedSum, OutputedProductivity);
       Console.ReadKey();
     }
   }

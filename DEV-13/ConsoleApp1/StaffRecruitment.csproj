@@ -43,13 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoundsOfQuantityFinder.cs" />
-    <Compile Include="Counter.cs" />
     <Compile Include="Criterion.cs" />
+    <Compile Include="CriterionChooser.cs" />
     <Compile Include="FirstCriterion.cs" />
+    <Compile Include="InvalidNumberOfCriterionException.cs" />
     <Compile Include="NumberOfEmployeesGenerator.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="ICountable.cs" />
     <Compile Include="Junior.cs" />
     <Compile Include="Lead.cs" />
     <Compile Include="Middle.cs" />

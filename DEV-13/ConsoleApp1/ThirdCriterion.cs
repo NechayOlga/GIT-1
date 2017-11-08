@@ -8,9 +8,9 @@ namespace StaffRecruitment
 {
   public class ThirdCriterion : Criterion
   {
-    public List<int> Salary;
+    public List<int> NumberOfEmployees;
     public List<int> Productivity = new List<int>();
-    public List<string> Result = new List<string>();
+    public List<string> Result;
     public List<List<int>> placementOfNumbers = new List<List<int>>();
     public int OutputedSum;
     public int OutputedProductivity;
@@ -20,7 +20,8 @@ namespace StaffRecruitment
 
     public void ProductivityForFourEmployees()
     {
-      Salary = new List<int>();
+      NumberOfEmployees = new List<int>();
+      Result = new List<string>();
       numberOfEmployeesGenerator = new NumberOfEmployeesGenerator();
       for (int p = boundsOfQuantityFinder.FindMinNumbersOfEmployeesFixProductivity(OutputedProductivity);
             p < boundsOfQuantityFinder.FindMaxNumbersOfEmployeesFixProductivity(OutputedProductivity); p++)
@@ -46,8 +47,7 @@ namespace StaffRecruitment
               placementOfNumbers[i][3] * lead.productivity == OutputedProductivity)
         {
 
-          Salary.Add((placementOfNumbers[i][0] * junior.salary + placementOfNumbers[i][1] * middle.salary +
-          placementOfNumbers[i][2] * senior.salary + placementOfNumbers[i][3] * lead.salary));
+          NumberOfEmployees.Add((placementOfNumbers[i][0]));
           StringBuilder resultString = new StringBuilder();
           resultString.Append((placementOfNumbers[i][0].ToString()));
           resultString.Append(junior.nameOfCategory);
@@ -57,19 +57,21 @@ namespace StaffRecruitment
           resultString.Append(senior.nameOfCategory);
           resultString.Append((placementOfNumbers[i][3].ToString()));
           resultString.Append(lead.nameOfCategory);
-          Result.Add(resultString.ToString());
+          Result.Add(placementOfNumbers[i][0].ToString() + junior.nameOfCategory + placementOfNumbers[i][1].ToString() +
+            middle.nameOfCategory + placementOfNumbers[i][2].ToString() + senior.nameOfCategory + placementOfNumbers[i][3].ToString()+
+            lead.nameOfCategory);
         }
       }
     }
     public int FindIndexOfMaxJunior()
     {
-      int countNumber = placementOfNumbers[0][0];
+      int countNumber = NumberOfEmployees[0];
       int counter = 0;
-      for(int i = 0; i < placementOfNumbers.Count; i++)
+      for(int i = 0; i < NumberOfEmployees.Count; i++)
       {
-        if(placementOfNumbers[i][0] > countNumber)
+        if(NumberOfEmployees[i] > countNumber)
         {
-          countNumber = placementOfNumbers[i][0];
+          countNumber = NumberOfEmployees[i];
           counter = i;
         }
       }
@@ -77,7 +79,7 @@ namespace StaffRecruitment
     }
     public string ResultList()
     {
-      return Result[FindIndexOfMaxJunior() - 1];
+      return Result[FindIndexOfMaxJunior()];
     }
   }
 }
